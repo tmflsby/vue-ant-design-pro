@@ -1,3 +1,5 @@
+@import '~ant-design-vue/es/style/themes/default.less';
+
 html,
 body,
 #app, #root {
@@ -71,5 +73,22 @@ ol {
     display: block;
     margin-bottom: 24px;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+        > span {
+          display: block;
+        }
+      }
+    }
   }
 }

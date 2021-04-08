@@ -4,7 +4,6 @@ import router from './router'
 import store from './store'
 import '../mock'
 import './plugins/ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
 import './style/index.less'
 
 Vue.config.productionTip = false
