@@ -1,6 +1,6 @@
 import router from './router'
 import store from './store'
-import storage from 'store'
+import storage from '@/utils/storage'
 import NProgress from 'nprogress' // progress bar
 import '@/components/NProgress/nprogress.less' // progress bar custom style
 import notification from 'ant-design-vue/es/notification'

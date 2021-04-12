@@ -1,5 +1,5 @@
-import Mock from 'mockjs2'
-import { builder } from '../util'
+import Mock from 'mockjs'
+import { builder } from '../mockUtil'
 
 //
 const tagCloudData = () => {

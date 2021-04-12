@@ -1,8 +1,7 @@
-import Mock from 'mockjs2'
-import { builder } from '../util'
+import Mock from 'mockjs'
+import { builder } from '../mockUtil'
 
-const info = (options) => {
-  console.log('options', options)
+const info = () => {
   const userInfo = {
     'id': '4291d7da9005377ec9aec4a71ea837f',
     'name': '天野远子',
@@ -370,7 +369,7 @@ const info = (options) => {
   return builder(userInfo)
 }
 
-const userNav = (options) => {
+const userNav = () => {
   const nav = [
     // dashboard
     {

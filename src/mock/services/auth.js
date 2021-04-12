@@ -1,5 +1,5 @@
-import Mock from 'mockjs2'
-import { builder, getBody } from '../util'
+import Mock from 'mockjs'
+import { builder, getBody } from '../mockUtil'
 
 const username = ['admin', 'super']
 // 强硬要求 ant.design 相同密码
@@ -40,11 +40,11 @@ const smsCaptcha = () => {
   return builder({ captcha: Mock.mock('@integer(10000, 99999)') })
 }
 
-const twofactor = () => {
+const twoFactor = () => {
   return builder({ stepCode: Mock.mock('@integer(0, 1)') })
 }
 
 Mock.mock(/\/auth\/login/, 'post', login)
 Mock.mock(/\/auth\/logout/, 'post', logout)
 Mock.mock(/\/account\/sms/, 'post', smsCaptcha)
-Mock.mock(/\/auth\/2step-code/, 'post', twofactor)
+Mock.mock(/\/auth\/2step-code/, 'post', twoFactor)

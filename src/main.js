@@ -1,7 +1,3 @@
-// with polyfills
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
-
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -16,7 +12,7 @@ import themePluginConfig from '../config/themePluginConfig'
 import './mock'
 
 import bootstrap from './core/bootstrap'
-import './core/lazy_use' // use lazy load components
+import './core/lazy_use' // use lazy load components 按需引入
 import './permission' // permission control
 import './utils/filter' // global filter
 import './global.less' // global style
@@ -36,7 +32,6 @@ new Vue({
   router,
   store,
   i18n,
-  // init localstorage, vuex
   created: bootstrap,
   render: h => h(App)
 }).$mount('#app')
