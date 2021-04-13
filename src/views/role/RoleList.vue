@@ -64,7 +64,7 @@
 
 <script>
 import pick from 'lodash.pick'
-import { getRoleList, getPermissions } from '@/api/manage'
+import { getRoleList, getPermissionNoPager } from '@/api/other'
 import { actionToObject } from '@/utils/permissions'
 import { baseMixin } from '@/store/app-mixin'
 
@@ -143,7 +143,7 @@ export default {
       })
     },
     loadPermissions () {
-      getPermissions().then(res => {
+      getPermissionNoPager().then(res => {
         const result = res.result
         this.permissions = result.map(permission => {
           const options = actionToObject(permission.actionData)

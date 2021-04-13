@@ -98,6 +98,7 @@
 <script>
 import { PageView, RouteView } from '@/layouts'
 import { AppPage, ArticlePage, ProjectPage } from './page'
+import { getTeamsWorkplace } from '@/api/manage'
 
 import { mapGetters } from 'vuex'
 
@@ -144,7 +145,7 @@ export default {
   },
   methods: {
     getTeams () {
-      this.$http.get('/workplace/teams').then(res => {
+      getTeamsWorkplace().then(res => {
         this.teams = res.result
         this.teamSpinning = false
       })

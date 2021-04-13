@@ -33,6 +33,7 @@
 <script>
 import { ArticleListContent } from '@/components'
 import IconText from '@/views/list/search/components/IconText'
+import { getArticleList } from '@/api/article'
 
 export default {
   name: 'Article',
@@ -52,15 +53,14 @@ export default {
   },
   methods: {
     getList () {
-      this.$http.get('/list/article').then(res => {
-        console.log('res', res)
+      getArticleList().then(res => {
         this.data = res.result
         this.loading = false
       })
     },
     loadMore () {
       this.loadingMore = true
-      this.$http.get('/list/article').then(res => {
+      getArticleList().then(res => {
         this.data = this.data.concat(res.result)
       }).finally(() => {
         this.loadingMore = false

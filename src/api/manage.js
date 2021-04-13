@@ -1,70 +1,31 @@
 import request from '@/utils/request'
 
-const api = {
-  user: '/user',
-  role: '/role',
-  service: '/service',
-  permission: '/permission',
-  permissionNoPager: '/permission/no-pager',
-  orgTree: '/org/tree'
-}
+export const getServiceList = (param) => request({
+  url: '/service',
+  method: 'get',
+  param
+})
 
-export default api
+export const getProjectsList = (param) => request({
+  url: '/list/search/projects',
+  method: 'get',
+  param
+})
 
-export function getUserList (parameter) {
-  return request({
-    url: api.user,
-    method: 'get',
-    params: parameter
-  })
-}
+export const getActivityWorkplace = (param) => request({
+  url: '/workplace/activity',
+  method: 'get',
+  param
+})
 
-export function getRoleList (parameter) {
-  return request({
-    url: api.role,
-    method: 'get',
-    params: parameter
-  })
-}
+export const getTeamsWorkplace = (param) => request({
+  url: '/workplace/teams',
+  method: 'get',
+  param
+})
 
-export function getServiceList (parameter) {
-  return request({
-    url: api.service,
-    method: 'get',
-    params: parameter
-  })
-}
-
-export function getPermissions (parameter) {
-  return request({
-    url: api.permissionNoPager,
-    method: 'get',
-    params: parameter
-  })
-}
-
-export function getOrgTree (parameter) {
-  return request({
-    url: api.orgTree,
-    method: 'get',
-    params: parameter
-  })
-}
-
-// id == 0 add     post
-// id != 0 update  put
-export function saveService (parameter) {
-  return request({
-    url: api.service,
-    method: parameter.id === 0 ? 'post' : 'put',
-    data: parameter
-  })
-}
-
-export function saveSub (sub) {
-  return request({
-    url: '/sub',
-    method: sub.id === 0 ? 'post' : 'put',
-    data: sub
-  })
-}
+export const getRadarWorkplace = (param) => request({
+  url: '/workplace/radar',
+  method: 'get',
+  param
+})

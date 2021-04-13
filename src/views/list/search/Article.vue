@@ -96,6 +96,8 @@
 <script>
 import { TagSelect, StandardFormRow, ArticleListContent } from '@/components'
 import IconText from './components/IconText'
+import { getArticleList } from '@/api/article'
+
 const TagSelectOption = TagSelect.Option
 
 const owners = [
@@ -146,15 +148,14 @@ export default {
       console.log(`selected ${value}`)
     },
     getList () {
-      this.$http.get('/list/article').then(res => {
-        console.log('res', res)
+      getArticleList().then(res => {
         this.data = res.result
         this.loading = false
       })
     },
     loadMore () {
       this.loadingMore = true
-      this.$http.get('/list/article').then(res => {
+      getArticleList().then(res => {
         this.data = this.data.concat(res.result)
       }).finally(() => {
         this.loadingMore = false

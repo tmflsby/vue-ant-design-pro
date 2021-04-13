@@ -117,6 +117,7 @@
 
 <script>
 import { STable } from '@/components'
+import { getServiceList } from '@/api/manage'
 
 export default {
   name: 'TableList',
@@ -172,13 +173,11 @@ export default {
         }
       ],
       // 加载数据方法 必须为 Promise 对象
-      loadData: parameter => {
-        return this.$http.get('/service', {
-          params: Object.assign(parameter, this.queryParam)
-        }).then(res => {
-          return res.result
-        })
-      },
+      loadData: parameter => getServiceList(
+        Object.assign(parameter, this.queryParam)
+      ).then(res => {
+        return res.result
+      }),
 
       selectedRowKeys: [],
       selectedRows: []

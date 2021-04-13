@@ -118,7 +118,7 @@ import md5 from 'md5'
 import TwoStepCaptcha from '@/components/tools/TwoStepCaptcha'
 import { mapActions } from 'vuex'
 import { timeFix } from '@/utils/util'
-import { getSmsCaptcha, get2step } from '@/api/login'
+import { getSmsCaptcha, get2step } from '@/api/auth'
 
 export default {
   components: {
@@ -144,13 +144,11 @@ export default {
     }
   },
   created () {
-    get2step({ })
-      .then(res => {
-        this.requiredTwoStepCaptcha = res.result.stepCode
-      })
-      .catch(() => {
-        this.requiredTwoStepCaptcha = false
-      })
+    get2step().then(res => {
+      this.requiredTwoStepCaptcha = res.result.stepCode
+    }).catch(() => {
+      this.requiredTwoStepCaptcha = false
+    })
     // this.requiredTwoStepCaptcha = true
   },
   methods: {
@@ -185,7 +183,7 @@ export default {
 
       validateFields(validateFieldsKey, { force: true }, (err, values) => {
         if (!err) {
-          console.log('login form', values)
+          console.log('auth form', values)
           const loginParams = { ...values }
           delete loginParams.username
           loginParams[!state.loginType ? 'email' : 'username'] = values.username
