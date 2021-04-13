@@ -4,9 +4,7 @@ const { builder, getQueryParameters } = require('../mockUtil')
 const totalCount = 5701
 
 const serverList = (options) => {
-  console.log(options)
   const parameters = getQueryParameters(options)
-  console.log(parameters)
 
   const result = []
   const pageNo = parseInt(parameters.pageNo)

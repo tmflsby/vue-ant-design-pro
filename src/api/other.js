@@ -1,27 +1,27 @@
 import request from '@/utils/request'
 
-export const getOrgTree = (param) => request({
+export const getOrgTree = (params) => request({
   url: '/org/tree',
   method: 'get',
-  param
+  params
 })
 
-export const getRoleList = (param) => request({
+export const getRoleList = (params) => request({
   url: '/role',
   method: 'get',
-  param
+  params
 })
 
-export const getPermission = (param) => request({
+export const getPermission = (params) => request({
   url: '/permission',
   method: 'get',
-  param
+  params
 })
 
-export const getPermissionNoPager = (param) => request({
+export const getPermissionNoPager = (params) => request({
   url: '/permission/no-pager',
   method: 'get',
-  param
+  params
 })
 
 export const postAvatar = (data) => request({

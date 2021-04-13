@@ -1,11 +1,13 @@
 import request from '@/utils/request'
 
-export const getInfo = () => request({
+export const getInfo = (params) => request({
   url: '/user/info',
-  method: 'get'
+  method: 'get',
+  params
 })
 
-export const getCurrentUserNav = () => request({
+export const getCurrentUserNav = (params) => request({
   url: '/user/nav',
-  method: 'get'
+  method: 'get',
+  params
 })

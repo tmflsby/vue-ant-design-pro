@@ -1,25 +1,25 @@
 import request from '@/utils/request'
 
-export const login = (param) => request({
+export const login = (data) => request({
   url: '/auth/login',
   method: 'post',
-  data: param
+  data
 })
 
-export const logout = (param) => request({
+export const logout = (data) => request({
   url: '/auth/logout',
   method: 'post',
-  param
+  data
 })
 
-export const get2step = (param) => request({
+export const get2step = (data) => request({
   url: '/auth/2step-code',
   method: 'post',
-  data: param
+  data
 })
 
-export const getSmsCaptcha = (param) => request({
+export const getSmsCaptcha = (data) => request({
   url: '/account/sms',
   method: 'post',
-  data: param
+  data
 })

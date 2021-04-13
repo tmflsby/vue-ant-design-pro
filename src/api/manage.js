@@ -1,31 +1,31 @@
 import request from '@/utils/request'
 
-export const getServiceList = (param) => request({
+export const getServiceList = (params) => request({
   url: '/service',
   method: 'get',
-  param
+  params
 })
 
-export const getProjectsList = (param) => request({
+export const getProjectsList = (params) => request({
   url: '/list/search/projects',
   method: 'get',
-  param
+  params
 })
 
-export const getActivityWorkplace = (param) => request({
+export const getActivityWorkplace = (params) => request({
   url: '/workplace/activity',
   method: 'get',
-  param
+  params
 })
 
-export const getTeamsWorkplace = (param) => request({
+export const getTeamsWorkplace = (params) => request({
   url: '/workplace/teams',
   method: 'get',
-  param
+  params
 })
 
-export const getRadarWorkplace = (param) => request({
+export const getRadarWorkplace = (params) => request({
   url: '/workplace/radar',
   method: 'get',
-  param
+  params
 })

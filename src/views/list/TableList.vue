@@ -209,7 +209,6 @@ export default {
         return getServiceList(
           Object.assign({}, parameter, this.queryParam)
         ).then(res => {
-          console.log(res)
           return res.result
         })
       },
