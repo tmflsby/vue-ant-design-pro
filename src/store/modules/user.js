@@ -1,4 +1,4 @@
-import storage from 'store'
+import storage from '@/utils/storage'
 import { login, getInfo, logout } from '@/api/login'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
 import { welcome } from '@/utils/util'

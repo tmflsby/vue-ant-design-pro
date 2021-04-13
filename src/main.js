@@ -9,9 +9,8 @@ import themePluginConfig from '../config/themePluginConfig'
 
 // mock
 // WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.
-import './mock'
+import '../mock'
 
-import bootstrap from './core/bootstrap'
 import './core/lazy_use' // use lazy load components 按需引入
 import './permission' // permission control
 import './utils/filter' // global filter
@@ -32,6 +31,5 @@ new Vue({
   router,
   store,
   i18n,
-  created: bootstrap,
   render: h => h(App)
 }).$mount('#app')

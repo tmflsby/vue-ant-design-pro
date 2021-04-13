@@ -9,12 +9,14 @@
 <script>
 import { domTitle, setDocumentTitle } from '@/utils/domUtil'
 import { i18nRender } from '@/locales'
+import Initializer from './core/initializer'
 
 export default {
   data () {
     return {
     }
   },
+  created: Initializer,
   computed: {
     locale () {
       // 只是为了切换语言时，更新标题

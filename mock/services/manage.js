@@ -1,5 +1,5 @@
-import Mock from 'mockjs'
-import { builder, getQueryParameters } from '../mockUtil'
+const Mock = require('mockjs')
+const { builder, getQueryParameters } = require('../mockUtil')
 
 const totalCount = 5701
 

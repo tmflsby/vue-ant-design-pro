@@ -94,7 +94,7 @@ export default {
         // 主色调
         primaryColor: defaultSettings.primaryColor,
         fixedHeader: defaultSettings.fixedHeader,
-        fixSiderbar: defaultSettings.fixSiderbar,
+        fixedSidebar: defaultSettings.fixedSidebar,
         colorWeak: defaultSettings.colorWeak,
 
         hideHintAlert: false,
@@ -153,7 +153,7 @@ export default {
         this.isMobile = true
         this.collapsed = false
         this.settings.contentWidth = CONTENT_WIDTH_TYPE.Fluid
-        // this.settings.fixSiderbar = false
+        // this.settings.fixedSidebar = false
       }
     },
     handleCollapse (val) {
@@ -170,7 +170,7 @@ export default {
           if (value === 'sidemenu') {
             this.settings.contentWidth = CONTENT_WIDTH_TYPE.Fluid
           } else {
-            this.settings.fixSiderbar = false
+            this.settings.fixedSidebar = false
             this.settings.contentWidth = CONTENT_WIDTH_TYPE.Fixed
           }
           break

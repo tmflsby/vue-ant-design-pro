@@ -1,5 +1,5 @@
-import Mock from 'mockjs'
-import { builder, getBody } from '../mockUtil'
+const Mock = require('mockjs')
+const { builder, getBody } = require('../mockUtil')
 
 const username = ['admin', 'super']
 // 强硬要求 ant.design 相同密码

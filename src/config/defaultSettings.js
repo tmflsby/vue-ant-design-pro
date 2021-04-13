@@ -5,7 +5,7 @@
  * colorWeak - 色盲模式
  * layout - 整体布局方式 ['sidemenu', 'topmenu'] 两种布局
  * fixedHeader - 固定 Header : boolean
- * fixSiderbar - 固定左侧菜单栏 ： boolean
+ * fixedSidebar - 固定左侧菜单栏 ： boolean
  * contentWidth - 内容区布局： 流式 |  固定
  *
  * storageOptions: {} - Vue-ls 插件配置项 (localStorage/sessionStorage)
@@ -18,7 +18,7 @@ export default {
   layout: 'sidemenu', // nav menu position: `sidemenu` or `topmenu`
   contentWidth: 'Fluid', // layout of content: `Fluid` or `Fixed`, only works when layout is topmenu
   fixedHeader: false, // sticky header
-  fixSiderbar: false, // sticky siderbar
+  fixedSidebar: false, // sticky sidebar
   autoHideHeader: false,
   multiTab: false,
   colorWeak: false,
