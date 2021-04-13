@@ -1,6 +1,6 @@
 import store from '@/store'
 import storage from '@/utils/storage'
-import defaultSettings from '@/config/defaultSettings'
+import defaultSettings from '@/js/defaultSettings'
 import * as mutationTypes from '@/store/mutation-types'
 import { printANSI } from '@/utils/screenLog'
 

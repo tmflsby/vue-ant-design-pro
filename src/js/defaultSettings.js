@@ -12,7 +12,7 @@
  *
  */
 
-export default {
+const defaultSettings = {
   navTheme: 'dark', // theme for nav menu
   primaryColor: '#F5222D', // primary color of ant design
   layout: 'sidemenu', // nav menu position: `sidemenu` or `topmenu`
@@ -30,3 +30,5 @@ export default {
   iconfontUrl: '',
   production: process.env.NODE_ENV === 'production' && process.env.VUE_APP_PREVIEW !== 'true'
 }
+
+export default defaultSettings

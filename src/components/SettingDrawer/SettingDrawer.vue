@@ -172,7 +172,7 @@
 
 <script>
 import SettingItem from './SettingItem'
-import config from '@/config/defaultSettings'
+import config from '@/js/defaultSettings'
 import { updateTheme, updateColorWeak, colorList } from './settingConfig'
 
 export default {

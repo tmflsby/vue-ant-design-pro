@@ -1,5 +1,4 @@
-// eslint-disable-next-line
-import { UserLayout, BasicLayout, BlankLayout } from '@/layouts'
+import { UserLayout, BasicLayout } from '@/layouts'
 import { bxAnaalyse } from '@/core/icons'
 
 const RouteView = {
@@ -107,19 +106,19 @@ export const asyncRouterMap = [
               {
                 path: '/list/search/article',
                 name: 'SearchArticles',
-                component: () => import('../views/list/search/Article'),
+                component: () => import('@/views/list/search/Article'),
                 meta: { title: 'menu.list.search-list.articles', permission: ['table'] }
               },
               {
                 path: '/list/search/project',
                 name: 'SearchProjects',
-                component: () => import('../views/list/search/Projects'),
+                component: () => import('@/views/list/search/Projects'),
                 meta: { title: 'menu.list.search-list.projects', permission: ['table'] }
               },
               {
                 path: '/list/search/application',
                 name: 'SearchApplications',
-                component: () => import('../views/list/search/Applications'),
+                component: () => import('@/views/list/search/Applications'),
                 meta: { title: 'menu.list.search-list.applications', permission: ['table'] }
               }
             ]
@@ -219,7 +218,7 @@ export const asyncRouterMap = [
           {
             path: '/account/settings',
             name: 'settings',
-            component: () => import('@/views/account/settings/Index'),
+            component: () => import('@/views/account/settings'),
             meta: { title: 'menu.account.settings', hideHeader: true, permission: ['user'] },
             redirect: '/account/settings/basic',
             hideChildrenInMenu: true,
@@ -354,28 +353,23 @@ export const constantRouterMap = [
       {
         path: 'login',
         name: 'login',
-        component: () => import(/* webpackChunkName: "user" */ '@/views/user/Login')
+        component: () => import(/* webpackChunkName: "userLogin" */ '@/views/user/Login')
       },
       {
         path: 'register',
         name: 'register',
-        component: () => import(/* webpackChunkName: "user" */ '@/views/user/Register')
+        component: () => import(/* webpackChunkName: "userRegister" */ '@/views/user/Register')
       },
       {
         path: 'register-result',
         name: 'registerResult',
-        component: () => import(/* webpackChunkName: "user" */ '@/views/user/RegisterResult')
-      },
-      {
-        path: 'recover',
-        name: 'recover',
-        component: undefined
+        component: () => import(/* webpackChunkName: "userRegisterResult" */ '@/views/user/RegisterResult')
       }
     ]
   },
 
   {
     path: '/404',
-    component: () => import(/* webpackChunkName: "fail" */ '@/views/exception/404')
+    component: () => import(/* webpackChunkName: "404" */ '@/views/exception/404')
   }
 ]

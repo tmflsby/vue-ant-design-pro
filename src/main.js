@@ -5,11 +5,7 @@ import store from './store/'
 import i18n from './locales'
 import ProLayout, { PageHeaderWrapper } from '@ant-design-vue/pro-layout'
 import themePluginConfig from '../config/themePluginConfig'
-
-// mock
-// WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.
-import '../mock'
-
+import '../mock' // WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.
 import './core/lazy_use' // use lazy load components 按需引入
 import './permission' // permission control
 import './utils/filter' // global filter
