@@ -1,4 +1,4 @@
-export default {
+const themeConfig = {
   theme: [
     {
       key: 'dark',
@@ -113,3 +113,5 @@ export default {
     }
   ]
 }
+
+export default themeConfig

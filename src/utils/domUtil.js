@@ -1,4 +1,4 @@
-import config from '@/js/defaultSettings'
+import defaultSettings from '@/utils/defaultSettings'
 
 export const setDocumentTitle = function (title) {
   document.title = title
@@ -18,4 +18,4 @@ export const setDocumentTitle = function (title) {
   }
 }
 
-export const domTitle = config.title
+export const domTitle = defaultSettings.title

@@ -4,7 +4,7 @@ import router from './router'
 import store from './store/'
 import i18n from './locales'
 import ProLayout, { PageHeaderWrapper } from '@ant-design-vue/pro-layout'
-import themePluginConfig from '../config/themePluginConfig'
+import themeConfig from './utils/themeConfig'
 import '../mock' // WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.
 import './core/lazy_use' // use lazy load components 按需引入
 import './permission' // permission control
@@ -18,7 +18,7 @@ Vue.component('pro-layout', ProLayout)
 Vue.component('page-container', PageHeaderWrapper)
 Vue.component('page-header-wrapper', PageHeaderWrapper)
 
-window.umi_plugin_ant_themeVar = themePluginConfig.theme
+window.umi_plugin_ant_themeVar = themeConfig.theme
 
 new Vue({
   router,

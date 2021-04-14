@@ -62,12 +62,12 @@
     <a-card style="margin-top: 24px;" :bordered="false">
       <a-list
         size="large"
-        rowKey="id"
+        rowKey="activeUser"
         :loading="loading"
         itemLayout="vertical"
         :dataSource="data"
       >
-        <a-list-item :key="item.id" slot="renderItem" slot-scope="item">
+        <a-list-item :key="item.activeUser" slot="renderItem" slot-scope="item">
           <template slot="actions">
             <icon-text type="star-o" :text="item.star" />
             <icon-text type="like-o" :text="item.like" />

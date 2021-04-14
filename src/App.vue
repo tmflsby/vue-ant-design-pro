@@ -9,8 +9,7 @@
 <script>
 import { domTitle, setDocumentTitle } from '@/utils/domUtil'
 import { i18nRender } from '@/locales'
-import Initializer from './js/initializer'
-
+import Initializer from './utils/initializer'
 export default {
   data () {
     return {

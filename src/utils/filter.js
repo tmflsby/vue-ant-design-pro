@@ -4,7 +4,7 @@ import 'moment/locale/zh-cn'
 
 moment.locale('zh-cn')
 
-Vue.filter('NumberFormat', function (value) {
+Vue.filter('NumberFormat', (value) => {
   if (!value) {
     return '0'
   }
@@ -12,10 +12,6 @@ Vue.filter('NumberFormat', function (value) {
   return value.toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')
 })
 
-Vue.filter('dayjs', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
-  return moment(dataStr).format(pattern)
-})
+Vue.filter('dayjs', (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') => moment(dataStr).format(pattern))
 
-Vue.filter('moment', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
-  return moment(dataStr).format(pattern)
-})
+Vue.filter('moment', (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') => moment(dataStr).format(pattern))
