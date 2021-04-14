@@ -2,7 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import storage from '@/utils/storage'
 import store from '@/store'
-import { ACCESS_TOKEN } from '@/store/mutation-types'
+import { ACCESS_TOKEN } from '@/store/mutationTypes'
 
 // 创建 axios 实例
 const request = axios.create({

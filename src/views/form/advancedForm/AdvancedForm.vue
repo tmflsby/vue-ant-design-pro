@@ -78,7 +78,7 @@
 import RepositoryForm from './RepositoryForm'
 import TaskForm from './TaskForm'
 import FooterToolBar from '@/components/FooterToolbar'
-import { baseMixin } from '@/store/app-mixin'
+import baseMixin from '@/mixins/baseMixin'
 
 const fieldLabels = {
   name: '仓库名',

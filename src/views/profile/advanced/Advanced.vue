@@ -161,7 +161,7 @@
 </template>
 
 <script>
-import { baseMixin } from '@/store/app-mixin'
+import baseMixin from '@/mixins/baseMixin'
 
 export default {
   name: 'Advanced',

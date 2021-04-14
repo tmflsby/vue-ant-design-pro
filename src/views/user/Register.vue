@@ -97,7 +97,7 @@
 
 <script>
 import { getSmsCaptcha } from '@/api/auth'
-import { deviceMixin } from '@/store/device-mixin'
+import { deviceMixin } from '@/mixins/deviceMixin'
 import { scorePassword } from '@/utils/util'
 
 const levelNames = {

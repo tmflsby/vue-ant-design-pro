@@ -1,7 +1,7 @@
 import storage from '@/utils/storage'
 import { login, logout } from '@/api/auth'
 import { getInfo } from '@/api/user'
-import { ACCESS_TOKEN } from '@/store/mutation-types'
+import { ACCESS_TOKEN } from '@/store/mutationTypes'
 import { welcome } from '@/utils/util'
 
 const user = {

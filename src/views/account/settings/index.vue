@@ -50,7 +50,7 @@
 
 <script>
 import { RouteView } from '@/layouts'
-import { baseMixin } from '@/store/app-mixin'
+import baseMixin from '@/mixins/baseMixin'
 
 export default {
   components: {

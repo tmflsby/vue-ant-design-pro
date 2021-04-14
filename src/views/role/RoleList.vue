@@ -65,8 +65,8 @@
 <script>
 import pick from 'lodash.pick'
 import { getRoleList, getPermissionNoPager } from '@/api/other'
-import { actionToObject } from '@/utils/permissions'
-import { baseMixin } from '@/store/app-mixin'
+// import { actionToObject } from '@/utils/permissions'
+import baseMixin from '@/mixins/baseMixin'
 
 export default {
   name: 'RoleList',
@@ -145,19 +145,20 @@ export default {
     loadPermissions () {
       getPermissionNoPager().then(res => {
         const result = res.result
-        this.permissions = result.map(permission => {
-          const options = actionToObject(permission.actionData)
-          permission.checkedAll = false
-          permission.selected = []
-          permission.indeterminate = false
-          permission.actionsOptions = options.map(option => {
-            return {
-              label: option.describe,
-              value: option.action
-            }
-          })
-          return permission
-        })
+        console.log(result)
+        // this.permissions = result.map(permission => {
+        //   const options = actionToObject(permission.actionData)
+        //   permission.checkedAll = false
+        //   permission.selected = []
+        //   permission.indeterminate = false
+        //   permission.actionsOptions = options.map(option => {
+        //     return {
+        //       label: option.describe,
+        //       value: option.action
+        //     }
+        //   })
+        //   return permission
+        // })
       })
     }
   }

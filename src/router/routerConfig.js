@@ -1,4 +1,4 @@
-import { UserLayout, BasicLayout } from '@/layouts'
+import { UserLayout, BasicLayout, PageView } from '@/layouts'
 import { bxAnaalyse } from '@/core/icons'
 
 const RouteView = {
@@ -266,10 +266,9 @@ export const asyncRouterMap = [
             ]
           }
         ]
-      }
+      },
 
       // other
-      /*
       {
         path: '/other',
         name: 'otherPage',
@@ -329,7 +328,6 @@ export const asyncRouterMap = [
           }
         ]
       }
-      */
     ]
   },
   {

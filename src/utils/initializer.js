@@ -1,7 +1,7 @@
 import store from '@/store'
 import storage from '@/utils/storage'
 import defaultSettings from '@/utils/defaultSettings'
-import * as mutationTypes from '@/store/mutation-types'
+import * as mutationTypes from '@/store/mutationTypes'
 import { printANSI } from '@/utils/screenLog'
 
 const Initializer = () => {

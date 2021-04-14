@@ -27,6 +27,4 @@ const baseMixin = {
   }
 }
 
-export {
-  baseMixin
-}
+export default baseMixin
