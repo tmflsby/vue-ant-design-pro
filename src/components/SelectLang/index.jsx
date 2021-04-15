@@ -1,22 +1,18 @@
 import './index.less'
 
 import { Icon, Menu, Dropdown } from 'ant-design-vue'
-import { i18nRender } from '@/locales'
+import { i18nRender } from '@/lang'
 import i18nMixin from '@/mixins/i18nMixin'
 
-const locales = ['zh-CN', 'zh-TW', 'en-US', 'pt-BR']
+const locales = ['zh-CN', 'en-US']
 const languageLabels = {
   'zh-CN': '简体中文',
-  'zh-TW': '繁体中文',
-  'en-US': 'English',
-  'pt-BR': 'Português'
+  'en-US': 'English'
 }
 // eslint-disable-next-line
 const languageIcons = {
   'zh-CN': '🇨🇳',
-  'zh-TW': '🇭🇰',
-  'en-US': '🇺🇸',
-  'pt-BR': '🇧🇷'
+  'en-US': '🇺🇸'
 }
 
 const SelectLang = {

@@ -8,7 +8,7 @@
 
 <script>
 import { domTitle, setDocumentTitle } from '@/utils/domUtil'
-import { i18nRender } from '@/locales'
+import { i18nRender } from '@/lang'
 import Initializer from './utils/initializer'
 export default {
   data () {

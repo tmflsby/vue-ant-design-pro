@@ -88,7 +88,7 @@ yarn run lint
 
 - [修改 Ant Design 配色 (@kokoroli)](https://github.com/kokoroli/antd-awesome/blob/master/docs/Ant_Design_%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96.md)
 
-- I18n: [多语言支持 (@musnow)](./src/locales/index.js)
+- I18n: [多语言支持 (@musnow)](src/lang/index.js)
 
 - 生产环境默认不加载 `mock`，更多详情请看 `src/mock/index.js`
 

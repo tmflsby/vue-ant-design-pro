@@ -6,7 +6,7 @@ import '@/components/NProgress/nprogress.less' // progress bar custom style
 import notification from 'ant-design-vue/es/notification'
 import { setDocumentTitle, domTitle } from '@/utils/domUtil'
 import { ACCESS_TOKEN } from '@/store/mutationTypes'
-import { i18nRender } from '@/locales'
+import { i18nRender } from '@/lang'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 

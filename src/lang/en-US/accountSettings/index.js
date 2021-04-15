@@ -32,7 +32,7 @@ export default {
   'account.settings.security.phone-description': 'Bound phone：',
   'account.settings.security.question': 'Security Question',
   'account.settings.security.question-description':
-    'The security question is not set, and the security policy can effectively protect the account security',
+    'The security question is not set, and the security policy can effectively protect the accountSettings security',
   'account.settings.security.email': 'Backup Email',
   'account.settings.security.email-description': 'Bound Email：',
   'account.settings.security.mfa': 'MFA Device',
@@ -42,21 +42,21 @@ export default {
   'account.settings.security.set': 'Set',
   'account.settings.security.bind': 'Bind',
   'account.settings.binding.taobao': 'Binding Taobao',
-  'account.settings.binding.taobao-description': 'Currently unbound Taobao account',
+  'account.settings.binding.taobao-description': 'Currently unbound Taobao accountSettings',
   'account.settings.binding.alipay': 'Binding Alipay',
-  'account.settings.binding.alipay-description': 'Currently unbound Alipay account',
+  'account.settings.binding.alipay-description': 'Currently unbound Alipay accountSettings',
   'account.settings.binding.dingding': 'Binding DingTalk',
-  'account.settings.binding.dingding-description': 'Currently unbound DingTalk account',
+  'account.settings.binding.dingding-description': 'Currently unbound DingTalk accountSettings',
   'account.settings.binding.bind': 'Bind',
   'account.settings.notification.password': 'Account Password',
   'account.settings.notification.password-description':
-    'Messages from other users will be notified in the form of a station letter',
+    'Messages from other users will be notified in the basicForm of a station letter',
   'account.settings.notification.messages': 'System Messages',
   'account.settings.notification.messages-description':
-    'System messages will be notified in the form of a station letter',
+    'System messages will be notified in the basicForm of a station letter',
   'account.settings.notification.todo': 'To-do Notification',
   'account.settings.notification.todo-description':
-    'The to-do list will be notified in the form of a letter from the station',
+    'The to-do list will be notified in the basicForm of a letter from the station',
   'account.settings.settings.open': 'Open',
   'account.settings.settings.close': 'Close'
 }

@@ -21,15 +21,15 @@ export default {
   'user.register.password.popover-message': 'Please enter at least 6 characters. Please do not use passwords that are easy to guess. ',
   'user.register.confirm-password.placeholder': 'Confirm password',
   'user.register.get-verification-code': 'Get code',
-  'user.register.sign-in': 'Already have an account?',
+  'user.register.sign-in': 'Already have an accountSettings?',
   'user.register-result.msg': 'Account：registered at {email}',
   'user.register-result.activation-email':
-    'The activation email has been sent to your email address and is valid for 24 hours. Please log in to the email in time and click on the link in the email to activate the account.',
+    'The activation email has been sent to your email address and is valid for 24 hours. Please log in to the email in time and click on the link in the email to activate the accountSettings.',
   'user.register-result.back-home': 'Back to home',
   'user.register-result.view-mailbox': 'View mailbox',
   'user.email.required': 'Please enter your email!',
   'user.email.wrong-format': 'The email address is in the wrong format!',
-  'user.userName.required': 'Please enter account name or email address',
+  'user.userName.required': 'Please enter accountSettings name or email address',
   'user.password.required': 'Please enter your password!',
   'user.password.twice.msg': 'The passwords entered twice do not match!',
   'user.password.strength.msg':

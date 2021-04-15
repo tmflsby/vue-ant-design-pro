@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store/'
-import i18n from './locales'
+import i18n from './lang'
 import ProLayout, { PageHeaderWrapper } from '@ant-design-vue/pro-layout'
 import themeConfig from './utils/themeConfig'
 import '../mock' // WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.

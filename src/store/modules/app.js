@@ -14,7 +14,7 @@ import {
   // i18n
   APP_LANGUAGE
 } from '@/store/mutationTypes'
-import { loadLanguageAsync } from '@/locales'
+import { loadLanguageAsync } from '@/lang'
 
 const app = {
   state: {

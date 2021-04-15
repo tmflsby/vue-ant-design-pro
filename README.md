@@ -80,7 +80,7 @@ yarn run lint
 
 - Customize Theme:  [Custom Theme Config (@kokoroli)](https://github.com/kokoroli/antd-awesome/blob/master/docs/Ant_Design_%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96.md)
 
-- I18n: [locales (@musnow)](./src/locales/index.js)
+- I18n: [locales (@musnow)](src/lang/index.js)
 
 - Production env `mock` is disabled. use `src/mock/index.js`
 
