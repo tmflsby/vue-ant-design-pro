@@ -166,7 +166,7 @@ import pick from 'lodash.pick'
 import { STable } from '@/components'
 import { getServiceList } from '@/api/manage'
 import { getRoleList } from '@/api/other'
-import { PERMISSION_ENUM } from '@/core/permission/permission'
+import { PERMISSION_ENUM } from '@/utils/permission/permission'
 
 const STATUS = {
   1: '启用',

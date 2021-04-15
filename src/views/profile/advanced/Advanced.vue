@@ -161,7 +161,7 @@
 </template>
 
 <script>
-import baseMixin from '@/mixins/baseMixin'
+import baseMixin from '@/utils/mixins/baseMixin'
 
 export default {
   name: 'Advanced',

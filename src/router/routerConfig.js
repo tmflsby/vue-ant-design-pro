@@ -1,5 +1,5 @@
 import { UserLayout, BasicLayout, PageView } from '@/layouts'
-import { bxAnaalyse } from '@/core/icons'
+import { bxAnaalyse } from '@/utils/icons'
 
 const RouteView = {
   name: 'RouteView',

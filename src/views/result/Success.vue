@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import baseMixin from '@/mixins/baseMixin'
+import baseMixin from '@/utils/mixins/baseMixin'
 
 const directionType = {
   horizontal: 'horizontal',

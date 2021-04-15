@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { deviceMixin } from '@/mixins/deviceMixin'
+import { deviceMixin } from '@/utils/mixins/deviceMixin'
 import SelectLang from '@/components/SelectLang'
 
 export default {

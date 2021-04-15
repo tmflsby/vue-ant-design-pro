@@ -224,7 +224,7 @@ import {
   NumberInfo,
   MiniSmoothArea
 } from '@/components'
-import baseMixin from '@/mixins/baseMixin'
+import baseMixin from '@/utils/mixins/baseMixin'
 
 const barData = []
 const barData2 = []

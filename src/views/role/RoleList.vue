@@ -66,7 +66,7 @@
 import pick from 'lodash.pick'
 import { getRoleList, getPermissionNoPager } from '@/api/other'
 // import { actionToObject } from '@/utils/permissions'
-import baseMixin from '@/mixins/baseMixin'
+import baseMixin from '@/utils/mixins/baseMixin'
 
 export default {
   name: 'RoleList',

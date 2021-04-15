@@ -31,7 +31,7 @@
 </template>
 <script>
 import { colorList } from '@/components/SettingDrawer/settingConfig'
-import baseMixin from '@/mixins/baseMixin'
+import baseMixin from '@/utils/mixins/baseMixin'
 import { NAV_THEME, TOGGLE_NAV_THEME } from '@/store/mutationTypes'
 
 const themeMap = {
