@@ -1,15 +1,14 @@
 <template>
-
   <div id="userLayout" :class="['user-layout-wrapper', isMobile && 'mobile']">
     <div class="container">
       <div class="user-layout-lang">
-        <select-lang class="select-lang-trigger"/>
+        <SelectLang class="select-lang-trigger"/>
       </div>
       <div class="user-layout-content">
         <div class="top">
           <div class="header">
             <a href="/">
-              <img src="~@/assets/logo.svg" class="logo" alt="logo">
+              <img class="logo" src="~@/assets/logo.svg" alt="logo">
               <span class="title">Ant Design</span>
             </a>
           </div>
@@ -22,12 +21,12 @@
 
         <div class="footer">
           <div class="links">
-            <a href="_self">帮助</a>
-            <a href="_self">隐私</a>
-            <a href="_self">条款</a>
+            <a href="/">帮助</a>
+            <a href="/">隐私</a>
+            <a href="/">条款</a>
           </div>
           <div class="copyright">
-            Copyright &copy; 2018 vueComponent
+            Copyright &copy; {{ currentYear }} vueComponent
           </div>
         </div>
       </div>
@@ -38,13 +37,15 @@
 <script>
 import { deviceMixin } from '@/utils/mixins/deviceMixin'
 import SelectLang from '@/components/SelectLang'
-
 export default {
   name: 'UserLayout',
-  components: {
-    SelectLang
-  },
+  components: { SelectLang },
   mixins: [deviceMixin],
+  data () {
+    return {
+      currentYear: new Date().getFullYear()
+    }
+  },
   mounted () {
     document.body.classList.add('userLayout')
   },

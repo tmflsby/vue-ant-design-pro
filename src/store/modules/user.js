@@ -1,8 +1,8 @@
 import storage from '@/utils/storage'
 import { login, logout } from '@/api/auth'
 import { getInfo } from '@/api/user'
-import { ACCESS_TOKEN } from '@/store/mutationTypes'
-import { welcome } from '@/utils/util'
+import * as mutationTypes from '@/store/mutationTypes'
+import { welcome } from '@/utils'
 
 const user = {
   state: {
@@ -39,7 +39,7 @@ const user = {
       return new Promise((resolve, reject) => {
         login(userInfo).then(response => {
           const result = response.result
-          storage.set(ACCESS_TOKEN, result.token, 7 * 24 * 60 * 60 * 1000)
+          storage.set(mutationTypes.ACCESS_TOKEN, result.token, 7 * 24 * 60 * 60 * 1000)
           commit('SET_TOKEN', result.token)
           resolve()
         }).catch(error => {
@@ -85,7 +85,7 @@ const user = {
         logout(state.token).then(() => {
           commit('SET_TOKEN', '')
           commit('SET_ROLES', [])
-          storage.remove(ACCESS_TOKEN)
+          storage.remove(mutationTypes.ACCESS_TOKEN)
           resolve()
         }).catch(() => {
           resolve()

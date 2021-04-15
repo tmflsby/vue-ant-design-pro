@@ -1,5 +1,5 @@
 const Mock = require('mockjs')
-const { isIE } = require('@/utils/util')
+const { isIE } = require('@/utils')
 require('./services/auth')
 require('./services/user')
 require('./services/manage')

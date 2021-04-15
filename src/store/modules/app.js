@@ -1,19 +1,5 @@
 import storage from '@/utils/storage'
-import {
-  SIDEBAR_TYPE,
-  TOGGLE_MOBILE_TYPE,
-  TOGGLE_NAV_THEME,
-  TOGGLE_LAYOUT,
-  TOGGLE_FIXED_HEADER,
-  TOGGLE_FIXED_SIDEBAR,
-  TOGGLE_CONTENT_WIDTH,
-  TOGGLE_HIDE_HEADER,
-  TOGGLE_COLOR,
-  TOGGLE_WEAK,
-  TOGGLE_MULTI_TAB,
-  // i18n
-  APP_LANGUAGE
-} from '@/store/mutationTypes'
+import * as mutationTypes from '@/store/mutationTypes'
 import { loadLanguageAsync } from '@/lang'
 
 const app = {
@@ -33,59 +19,59 @@ const app = {
     _antLocale: {}
   },
   mutations: {
-    [SIDEBAR_TYPE]: (state, type) => {
+    [mutationTypes.SIDEBAR_TYPE]: (state, type) => {
       state.sideCollapsed = type
-      storage.set(SIDEBAR_TYPE, type)
+      storage.set(mutationTypes.SIDEBAR_TYPE, type)
     },
-    [TOGGLE_MOBILE_TYPE]: (state, isMobile) => {
+    [mutationTypes.TOGGLE_MOBILE_TYPE]: (state, isMobile) => {
       state.isMobile = isMobile
     },
-    [TOGGLE_NAV_THEME]: (state, theme) => {
+    [mutationTypes.TOGGLE_NAV_THEME]: (state, theme) => {
       state.theme = theme
-      storage.set(TOGGLE_NAV_THEME, theme)
+      storage.set(mutationTypes.TOGGLE_NAV_THEME, theme)
     },
-    [TOGGLE_LAYOUT]: (state, mode) => {
+    [mutationTypes.TOGGLE_LAYOUT]: (state, mode) => {
       state.layout = mode
-      storage.set(TOGGLE_LAYOUT, mode)
+      storage.set(mutationTypes.TOGGLE_LAYOUT, mode)
     },
-    [TOGGLE_FIXED_HEADER]: (state, mode) => {
+    [mutationTypes.TOGGLE_FIXED_HEADER]: (state, mode) => {
       state.fixedHeader = mode
-      storage.set(TOGGLE_FIXED_HEADER, mode)
+      storage.set(mutationTypes.TOGGLE_FIXED_HEADER, mode)
     },
-    [TOGGLE_FIXED_SIDEBAR]: (state, mode) => {
+    [mutationTypes.TOGGLE_FIXED_SIDEBAR]: (state, mode) => {
       state.fixedSidebar = mode
-      storage.set(TOGGLE_FIXED_SIDEBAR, mode)
+      storage.set(mutationTypes.TOGGLE_FIXED_SIDEBAR, mode)
     },
-    [TOGGLE_CONTENT_WIDTH]: (state, type) => {
+    [mutationTypes.TOGGLE_CONTENT_WIDTH]: (state, type) => {
       state.contentWidth = type
-      storage.set(TOGGLE_CONTENT_WIDTH, type)
+      storage.set(mutationTypes.TOGGLE_CONTENT_WIDTH, type)
     },
-    [TOGGLE_HIDE_HEADER]: (state, type) => {
+    [mutationTypes.TOGGLE_HIDE_HEADER]: (state, type) => {
       state.autoHideHeader = type
-      storage.set(TOGGLE_HIDE_HEADER, type)
+      storage.set(mutationTypes.TOGGLE_HIDE_HEADER, type)
     },
-    [TOGGLE_COLOR]: (state, color) => {
+    [mutationTypes.TOGGLE_COLOR]: (state, color) => {
       state.color = color
-      storage.set(TOGGLE_COLOR, color)
+      storage.set(mutationTypes.TOGGLE_COLOR, color)
     },
-    [TOGGLE_WEAK]: (state, mode) => {
+    [mutationTypes.TOGGLE_WEAK]: (state, mode) => {
       state.weak = mode
-      storage.set(TOGGLE_WEAK, mode)
+      storage.set(mutationTypes.TOGGLE_WEAK, mode)
     },
-    [APP_LANGUAGE]: (state, lang, antd = {}) => {
+    [mutationTypes.APP_LANGUAGE]: (state, lang, antd = {}) => {
       state.lang = lang
       state._antLocale = antd
-      storage.set(APP_LANGUAGE, lang)
+      storage.set(mutationTypes.APP_LANGUAGE, lang)
     },
-    [TOGGLE_MULTI_TAB]: (state, bool) => {
-      storage.set(TOGGLE_MULTI_TAB, bool)
+    [mutationTypes.TOGGLE_MULTI_TAB]: (state, bool) => {
+      storage.set(mutationTypes.TOGGLE_MULTI_TAB, bool)
       state.multiTab = bool
     }
   },
   actions: {
     setLang ({ commit }, lang) {
       return new Promise((resolve, reject) => {
-        commit(APP_LANGUAGE, lang)
+        commit(mutationTypes.APP_LANGUAGE, lang)
         loadLanguageAsync(lang).then(() => {
           resolve()
         }).catch((e) => {

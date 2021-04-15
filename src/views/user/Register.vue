@@ -98,7 +98,7 @@
 <script>
 import { getSmsCaptcha } from '@/api/auth'
 import { deviceMixin } from '@/utils/mixins/deviceMixin'
-import { scorePassword } from '@/utils/util'
+import { scorePassword } from '@/utils'
 
 const levelNames = {
   0: 'user.password.strength.short',

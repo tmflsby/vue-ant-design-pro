@@ -25,14 +25,14 @@ const i18n = new VueI18n({
 
 const loadedLanguages = [defaultLang]
 
-function setI18nLanguage (lang) {
+const setI18nLanguage = (lang) => {
   i18n.locale = lang
   // request.headers['Accept-Language'] = lang
   document.querySelector('html').setAttribute('lang', lang)
   return lang
 }
 
-export function loadLanguageAsync (lang = defaultLang) {
+export const loadLanguageAsync = (lang = defaultLang) => {
   return new Promise(resolve => {
     // 缓存语言设置
     storage.set('lang', lang)

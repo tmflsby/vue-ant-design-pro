@@ -7,7 +7,7 @@ import { asyncRouterMap, constantRouterMap } from '@/router/routerConfig'
  * @param route
  * @returns {boolean}
  */
-function hasPermission (permission, route) {
+const hasPermission = (permission, route) => {
   if (route.meta && route.meta.permission) {
     let flag = false
     for (let i = 0, len = permission.length; i < len; i++) {
@@ -28,8 +28,8 @@ function hasPermission (permission, route) {
  * @param route
  * @returns {*}
  */
-// eslint-disable-next-line
-function hasRole(roles, route) {
+// eslint-disable-next-line no-unused-vars
+const hasRole = (roles, route) => {
   if (route.meta && route.meta.roles) {
     return route.meta.roles.includes(roles.id)
   } else {
@@ -37,8 +37,8 @@ function hasRole(roles, route) {
   }
 }
 
-function filterAsyncRouter (routerMap, roles) {
-  const accessedRouters = routerMap.filter(route => {
+const filterAsyncRouter = (routerMap, roles) => {
+  return routerMap.filter(route => {
     if (hasPermission(roles.permissionList, route)) {
       if (route.children && route.children.length) {
         route.children = filterAsyncRouter(route.children, roles)
@@ -47,7 +47,6 @@ function filterAsyncRouter (routerMap, roles) {
     }
     return false
   })
-  return accessedRouters
 }
 
 const permission = {
