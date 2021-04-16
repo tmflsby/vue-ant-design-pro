@@ -9,7 +9,7 @@ import '../mock' // WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `pro
 import './utils/lazy_use' // use lazy load components 按需引入
 import './permission' // permission control
 import './utils/filter' // global filter
-import './global.less' // global style
+import './style/index.less'
 
 Vue.config.productionTip = false
 

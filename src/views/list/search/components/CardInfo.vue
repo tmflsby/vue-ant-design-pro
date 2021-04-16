@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "~@/components/index.less";
+@import "~@/style/common.less";
 
 .cardInfo {
 

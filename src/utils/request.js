@@ -18,14 +18,14 @@ const errorHandler = (error) => {
     const token = storage.get(ACCESS_TOKEN)
 
     if (error.response.status === 403) {
-      Vue.$notification.error({
+      Vue.prototype.$notification.error({
         message: 'Forbidden',
         description: data.message
       })
     }
 
     if (error.response.status === 401 && !(data.result && data.result.isLogin)) {
-      Vue.$notification.error({
+      Vue.prototype.$notification.error({
         message: 'Unauthorized',
         description: 'Authorization verification failed'
       })
@@ -52,7 +52,6 @@ request.interceptors.request.use(config => {
   if (token) {
     config.headers['Access-Token'] = token
   }
-
   return config
 }, errorHandler)
 

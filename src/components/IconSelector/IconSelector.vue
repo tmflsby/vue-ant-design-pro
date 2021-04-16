@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @import "../index.less";
+  @import "../../style/common.less";
 
   ul{
     list-style: none;

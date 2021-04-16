@@ -38,10 +38,15 @@ const user = {
     Login ({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
         login(userInfo).then(response => {
-          const result = response.result
-          storage.set(mutationTypes.ACCESS_TOKEN, result.token, 7 * 24 * 60 * 60 * 1000)
-          commit('SET_TOKEN', result.token)
-          resolve()
+          console.log(response)
+          if (response.code === 200) {
+            const result = response.result
+            storage.set(mutationTypes.ACCESS_TOKEN, result.token, 7 * 24 * 60 * 60 * 1000)
+            commit('SET_TOKEN', result.token)
+            resolve(response)
+          } else {
+            reject(response)
+          }
         }).catch(error => {
           reject(error)
         })
