@@ -22,6 +22,7 @@ const axis1Opts = {
     hideFirstLine: false
   }
 }
+
 const axis2Opts = {
   dataKey: 'score',
   line: null,

@@ -149,6 +149,9 @@ export default {
     onSelectChange (selectedRowKeys, selectedRows) {
       this.selectedRowKeys = selectedRowKeys
       this.selectedRows = selectedRows
+    },
+    handleEdit (record) {
+      console.log(record)
     }
   }
 }

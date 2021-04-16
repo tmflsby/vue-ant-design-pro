@@ -1,9 +1,10 @@
 <template>
   <page-header-wrapper>
+
     <template v-slot:content>
       <div class="page-header-content">
         <div class="avatar">
-          <a-avatar size="large" :src="currentUser.avatar"/>
+          <a-avatar size="large" :src="currentUser.avatar" />
         </div>
         <div class="content">
           <div class="content-title">
@@ -13,34 +14,51 @@
         </div>
       </div>
     </template>
+
     <template v-slot:extraContent>
       <div class="extra-content">
         <div class="stat-item">
-          <a-statistic title="项目数" :value="56" />
+          <a-statistic title="项目数" :value="56"/>
         </div>
         <div class="stat-item">
-          <a-statistic title="团队内排名" :value="8" suffix="/ 24" />
+          <a-statistic title="团队内排名" :value="8" suffix="/ 24"/>
         </div>
         <div class="stat-item">
-          <a-statistic title="项目访问" :value="2223" />
+          <a-statistic title="项目访问" :value="2223"/>
         </div>
       </div>
     </template>
 
     <div>
       <a-row :gutter="24">
-        <a-col :xl="16" :lg="24" :md="24" :sm="24" :xs="24">
+
+        <a-col
+          style="padding-bottom: 24px"
+          :xl="16"
+          :lg="24"
+          :md="24"
+          :sm="24"
+          :xs="24"
+        >
           <a-card
             class="project-list"
-            :loading="loading"
             style="margin-bottom: 24px;"
-            :bordered="false"
             title="进行中的项目"
-            :body-style="{ padding: 0 }">
+            :loading="loading"
+            :bordered="false"
+            :body-style="{ padding: 0 }"
+          >
             <a slot="extra">全部项目</a>
             <div>
-              <a-card-grid class="project-card-grid" :key="i" v-for="(item, i) in projects">
-                <a-card :bordered="false" :body-style="{ padding: 0 }">
+              <a-card-grid
+                class="project-card-grid"
+                v-for="(item, index) in projects"
+                :key="index"
+              >
+                <a-card
+                  :bordered="false"
+                  :body-style="{ padding: 0 }"
+                >
                   <a-card-meta>
                     <div slot="title" class="card-title">
                       <a-avatar size="small" :src="item.cover"/>
@@ -51,7 +69,7 @@
                     </div>
                   </a-card-meta>
                   <div class="project-item">
-                    <a href="/#/">科学搬砖组</a>
+                    <a href="#">科学搬砖组</a>
                     <span class="datetime">9小时前</span>
                   </div>
                 </a-card>
@@ -59,9 +77,16 @@
             </div>
           </a-card>
 
-          <a-card :loading="loading" title="动态" :bordered="false">
+          <a-card
+            title="动态"
+            :loading="loading"
+            :bordered="false"
+          >
             <a-list>
-              <a-list-item :key="index" v-for="(item, index) in activities">
+              <a-list-item
+                v-for="(item, index) in activities"
+                :key="index"
+              >
                 <a-list-item-meta>
                   <a-avatar slot="avatar" :src="item.user.avatar"/>
                   <div slot="title">
@@ -76,14 +101,22 @@
             </a-list>
           </a-card>
         </a-col>
+
         <a-col
           style="padding: 0 12px"
           :xl="8"
           :lg="24"
           :md="24"
           :sm="24"
-          :xs="24">
-          <a-card title="快速开始 / 便捷导航" style="margin-bottom: 24px" :bordered="false" :body-style="{padding: 0}">
+          :xs="24"
+        >
+
+          <a-card
+            style="margin-bottom: 24px"
+            title="快速开始 / 便捷导航"
+            :bordered="false"
+            :body-style="{padding: 0}"
+          >
             <div class="item-group">
               <a>操作一</a>
               <a>操作二</a>
@@ -91,24 +124,41 @@
               <a>操作四</a>
               <a>操作五</a>
               <a>操作六</a>
-              <a-button size="small" type="primary" ghost icon="plus">添加</a-button>
+              <a-button
+                type="primary"
+                icon="plus"
+                size="small"
+                ghost
+              >
+                添加
+              </a-button>
             </div>
           </a-card>
+
           <a-card
-            title="XX 指数"
             style="margin-bottom: 24px"
+            title="XX 指数"
             :loading="radarLoading"
             :bordered="false"
-            :body-style="{ padding: 0 }">
+            :body-style="{ padding: 0 }"
+          >
             <div style="min-height: 400px;">
-              <!-- :scale="scale" :axis1Opts="axis1Opts" :axis2Opts="axis2Opts"  -->
-              <radar :data="radarData"/>
+              <Radar :data="radarData"/>
             </div>
           </a-card>
-          <a-card :loading="loading" title="团队" :bordered="false">
+
+          <a-card
+            title="团队"
+            :loading="loading"
+            :bordered="false"
+          >
             <div class="members">
               <a-row>
-                <a-col :span="12" v-for="(item, index) in teams" :key="index">
+                <a-col
+                  :span="12"
+                  v-for="(item, index) in teams"
+                  :key="index"
+                >
                   <a>
                     <a-avatar size="small" :src="item.avatar"/>
                     <span class="member">{{ item.name }}</span>
@@ -117,16 +167,19 @@
               </a-row>
             </div>
           </a-card>
+
         </a-col>
+
       </a-row>
     </div>
+
   </page-header-wrapper>
 </template>
 
 <script>
-import { timeFix } from '@/utils'
+import DataSet from '@antv/data-set'
 import { mapState } from 'vuex'
-import { PageHeaderWrapper } from '@ant-design-vue/pro-layout'
+import { timeFix } from '@/utils'
 import { Radar } from '@/components'
 import {
   getProjectsList,
@@ -134,21 +187,14 @@ import {
   getTeamsWorkplace,
   getRadarWorkplace
 } from '@/api/manage'
-
-const DataSet = require('@antv/data-set')
-
 export default {
   name: 'Workplace',
-  components: {
-    PageHeaderWrapper,
-    Radar
-  },
+  components: { Radar },
   data () {
     return {
       timeFix: timeFix(),
       avatar: '',
       user: {},
-
       projects: [],
       loading: true,
       radarLoading: true,
@@ -257,125 +303,230 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @import "./Workplace.less";
+@import '~ant-design-vue/es/style/themes/default.less';
 
-  .project-list {
+.text-overflow() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
 
-    .card-title {
-      font-size: 0;
+// mixins for clearfix
+// ------------------------
+.clearfix() {
+  zoom: 1;
+  &::before,
+  &::after {
+    display: table;
+    content: ' ';
+  }
+  &::after {
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+  }
+}
 
-      a {
-        color: rgba(0, 0, 0, 0.85);
-        margin-left: 12px;
-        line-height: 24px;
-        height: 24px;
-        display: inline-block;
-        vertical-align: top;
-        font-size: 14px;
+.page-header-content {
+  display: flex;
 
-        &:hover {
-          color: #1890ff;
-        }
-      }
-    }
+  .avatar {
+    flex: 0 1 72px;
 
-    .card-description {
-      color: rgba(0, 0, 0, 0.45);
-      height: 44px;
-      line-height: 22px;
-      overflow: hidden;
-    }
-
-    .project-item {
-      display: flex;
-      margin-top: 8px;
-      overflow: hidden;
-      font-size: 12px;
-      height: 20px;
-      line-height: 20px;
-
-      a {
-        color: rgba(0, 0, 0, 0.45);
-        display: inline-block;
-        flex: 1 1 0;
-
-        &:hover {
-          color: #1890ff;
-        }
-      }
-
-      .datetime {
-        color: rgba(0, 0, 0, 0.25);
-        flex: 0 0 auto;
-        float: right;
-      }
-    }
-
-    .ant-card-meta-description {
-      color: rgba(0, 0, 0, 0.45);
-      height: 44px;
-      line-height: 22px;
-      overflow: hidden;
+    & > span {
+      display: block;
+      width: 72px;
+      height: 72px;
+      border-radius: 72px;
     }
   }
 
-  .item-group {
-    padding: 20px 0 8px 24px;
+  .content {
+    position: relative;
+    top: 4px;
+    flex: 1 1 auto;
+    margin-left: 24px;
+    color: @text-color-secondary;
+    line-height: 22px;
+
+    .content-title {
+      margin-bottom: 12px;
+      color: @heading-color;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}
+
+.extra-content {
+  .clearfix();
+  float: right;
+  white-space: nowrap;
+
+  .stat-item {
+    position: relative;
+    display: inline-block;
+    padding: 0 32px;
+
+    > p:first-child {
+      margin-bottom: 4px;
+      color: @text-color-secondary;
+      font-size: @font-size-base;
+      line-height: 22px;
+    }
+
+    > p {
+      margin: 0;
+      color: @heading-color;
+      font-size: 30px;
+      line-height: 38px;
+
+      > span {
+        color: @text-color-secondary;
+        font-size: 20px;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      width: 1px;
+      height: 40px;
+      background-color: @border-color-split;
+      content: '';
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.project-list {
+
+  .card-title {
     font-size: 0;
 
     a {
-      color: rgba(0, 0, 0, 0.65);
-      display: inline-block;
-      font-size: 14px;
-      margin-bottom: 13px;
-      width: 25%;
-    }
-  }
-
-  .members {
-    a {
-      display: block;
-      margin: 12px 0;
+      color: rgba(0, 0, 0, 0.85);
+      margin-left: 12px;
       line-height: 24px;
       height: 24px;
-
-      .member {
-        font-size: 14px;
-        color: rgba(0, 0, 0, .65);
-        line-height: 24px;
-        max-width: 100px;
-        vertical-align: top;
-        margin-left: 12px;
-        transition: all 0.3s;
-        display: inline-block;
-      }
+      display: inline-block;
+      vertical-align: top;
+      font-size: 14px;
 
       &:hover {
-        span {
-          color: #1890ff;
-        }
+        color: #1890ff;
       }
     }
   }
 
-  .mobile {
+  .card-description {
+    color: rgba(0, 0, 0, 0.45);
+    height: 44px;
+    line-height: 22px;
+    overflow: hidden;
+  }
 
-    .project-list {
+  .project-item {
+    display: flex;
+    margin-top: 8px;
+    overflow: hidden;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
 
-      .project-card-grid {
-        width: 100%;
+    a {
+      color: rgba(0, 0, 0, 0.45);
+      display: inline-block;
+      flex: 1 1 0;
+
+      &:hover {
+        color: #1890ff;
       }
     }
 
-    .more-info {
-      border: 0;
-      padding-top: 16px;
-      margin: 16px 0 16px;
-    }
-
-    .headerContent .title .welcome-text {
-      display: none;
+    .datetime {
+      color: rgba(0, 0, 0, 0.25);
+      flex: 0 0 auto;
+      float: right;
     }
   }
+
+  .ant-card-meta-description {
+    color: rgba(0, 0, 0, 0.45);
+    height: 44px;
+    line-height: 22px;
+    overflow: hidden;
+  }
+}
+
+.item-group {
+  padding: 20px 0 8px 24px;
+  font-size: 0;
+
+  a {
+    color: rgba(0, 0, 0, 0.65);
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 13px;
+    width: 25%;
+  }
+}
+
+.members {
+  a {
+    display: block;
+    margin: 12px 0;
+    line-height: 24px;
+    height: 24px;
+
+    .member {
+      font-size: 14px;
+      color: rgba(0, 0, 0, .65);
+      line-height: 24px;
+      max-width: 100px;
+      vertical-align: top;
+      margin-left: 12px;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    &:hover {
+      span {
+        color: #1890ff;
+      }
+    }
+  }
+}
+
+.mobile {
+
+  .project-list {
+
+    .project-card-grid {
+      width: 100%;
+    }
+  }
+
+  .more-info {
+    border: 0;
+    padding-top: 16px;
+    margin: 16px 0 16px;
+  }
+
+  .headerContent .title .welcome-text {
+    display: none;
+  }
+}
 
 </style>

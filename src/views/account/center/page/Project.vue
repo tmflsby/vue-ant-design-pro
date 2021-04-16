@@ -12,7 +12,7 @@
           <div class="cardItemContent">
             <span>{{ item.updatedAt | fromNow }}</span>
             <div class="avatarList">
-              <avatar-list size="mini">
+              <avatar-list size="small">
                 <avatar-list-item
                   v-for="(member, i) in item.members"
                   :key="`${item.id}-avatar-${i}`"
@@ -34,7 +34,7 @@ import { TagSelect, StandardFormRow, Ellipsis, AvatarList } from '@/components'
 import { getArticleList } from '@/api/article'
 
 const TagSelectOption = TagSelect.Option
-const AvatarListItem = AvatarList.AvatarItem
+const AvatarListItem = AvatarList.Item
 
 export default {
   name: 'Project',

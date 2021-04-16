@@ -1,66 +1,71 @@
 <template>
   <div>
     <a-row :gutter="24">
+
       <a-col :sm="24" :md="12" :xl="6" :style="{ marginBottom: '24px' }">
-        <chart-card :loading="loading" :title="$t('dashboard.analysis.total-sales')" total="￥126,560">
+        <ChartCard :loading="loading" :title="$t('dashboard.analysis.total-sales')" total="￥126,560">
           <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
-            <trend flag="up" style="margin-right: 16px;">
+            <Trend flag="up" style="margin-right: 16px;">
               <span slot="term">{{ $t('dashboard.analysis.week') }}</span>
               12%
-            </trend>
-            <trend flag="down">
+            </Trend>
+            <Trend flag="down">
               <span slot="term">{{ $t('dashboard.analysis.day') }}</span>
               11%
-            </trend>
+            </Trend>
           </div>
           <template slot="footer">{{ $t('dashboard.analysis.day-sales') }}<span>￥ 234.56</span></template>
-        </chart-card>
+        </ChartCard>
       </a-col>
+
       <a-col :sm="24" :md="12" :xl="6" :style="{ marginBottom: '24px' }">
-        <chart-card :loading="loading" :title="$t('dashboard.analysis.visits')" :total="8846 | NumberFormat">
+        <ChartCard :loading="loading" :title="$t('dashboard.analysis.visits')" :total="8846 | NumberFormat">
           <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
-            <mini-area />
+            <MiniArea/>
           </div>
           <template slot="footer">{{ $t('dashboard.analysis.day-visits') }}<span> {{ '1234' | NumberFormat }}</span></template>
-        </chart-card>
+        </ChartCard>
       </a-col>
+
       <a-col :sm="24" :md="12" :xl="6" :style="{ marginBottom: '24px' }">
-        <chart-card :loading="loading" :title="$t('dashboard.analysis.payments')" :total="6560 | NumberFormat">
+        <ChartCard :loading="loading" :title="$t('dashboard.analysis.payments')" :total="6560 | NumberFormat">
           <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
-            <mini-bar />
+            <MiniBar/>
           </div>
           <template slot="footer">{{ $t('dashboard.analysis.conversion-rate') }} <span>60%</span></template>
-        </chart-card>
+        </ChartCard>
       </a-col>
+
       <a-col :sm="24" :md="12" :xl="6" :style="{ marginBottom: '24px' }">
-        <chart-card :loading="loading" :title="$t('dashboard.analysis.operational-effect')" total="78%">
+        <ChartCard :loading="loading" :title="$t('dashboard.analysis.operational-effect')" total="78%">
           <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
             <a-icon type="info-circle-o" />
           </a-tooltip>
           <div>
-            <mini-progress color="rgb(19, 194, 194)" :target="80" :percentage="78" height="8px" />
+            <MiniProgress color="rgb(19, 194, 194)" :target="80" :percentage="78" height="8px" />
           </div>
           <template slot="footer">
-            <trend flag="down" style="margin-right: 16px;">
+            <Trend flag="down" style="margin-right: 16px;">
               <span slot="term">{{ $t('dashboard.analysis.week') }}</span>
               12%
-            </trend>
-            <trend flag="up">
+            </Trend>
+            <Trend flag="up">
               <span slot="term">{{ $t('dashboard.analysis.day') }}</span>
               80%
-            </trend>
+            </Trend>
           </template>
-        </chart-card>
+        </ChartCard>
       </a-col>
+
     </a-row>
 
     <a-card :loading="loading" :bordered="false" :body-style="{padding: '0'}">
@@ -101,6 +106,7 @@
 
     <div class="antd-pro-pages-dashboard-analysis-twoColLayout" :class="!isMobile && 'desktop'">
       <a-row :gutter="24" type="flex" :style="{ marginTop: '24px' }">
+
         <a-col :xl="12" :lg="24" :md="24" :sm="24" :xs="24">
           <a-card :loading="loading" :bordered="false" :title="$t('dashboard.analysis.online-top-search')" :style="{ height: '100%' }">
             <a-dropdown :trigger="['click']" placement="bottomLeft" slot="extra">
@@ -117,35 +123,39 @@
               </a-menu>
             </a-dropdown>
             <a-row :gutter="68">
+
               <a-col :xs="24" :sm="12" :style="{ marginBottom: ' 24px'}">
-                <number-info :total="12321" :sub-total="17.1">
+                <NumberInfo :total="12321" :sub-total="17.1">
                   <span slot="subtitle">
                     <span>{{ $t('dashboard.analysis.search-users') }}</span>
                     <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
                       <a-icon type="info-circle-o" :style="{ marginLeft: '8px' }" />
                     </a-tooltip>
                   </span>
-                </number-info>
+                </NumberInfo>
                 <!-- miniChart -->
                 <div>
-                  <mini-smooth-area :style="{ height: '45px' }" :dataSource="searchUserData" :scale="searchUserScale" />
+                  <MiniSmoothArea :style="{ height: '45px' }" :dataSource="searchUserData" :scale="searchUserScale" />
                 </div>
               </a-col>
+
               <a-col :xs="24" :sm="12" :style="{ marginBottom: ' 24px'}">
-                <number-info :total="2.7" :sub-total="26.2" status="down">
+                <NumberInfo :total="2.7" :sub-total="26.2" status="down">
                   <span slot="subtitle">
                     <span>{{ $t('dashboard.analysis.per-capita-search') }}</span>
                     <a-tooltip :title="$t('dashboard.analysis.introduce')" slot="action">
                       <a-icon type="info-circle-o" :style="{ marginLeft: '8px' }" />
                     </a-tooltip>
                   </span>
-                </number-info>
+                </NumberInfo>
                 <!-- miniChart -->
                 <div>
-                  <mini-smooth-area :style="{ height: '45px' }" :dataSource="searchUserData" :scale="searchUserScale" />
+                  <MiniSmoothArea :style="{ height: '45px' }" :dataSource="searchUserData" :scale="searchUserScale" />
                 </div>
               </a-col>
+
             </a-row>
+
             <div class="ant-table-wrapper">
               <a-table
                 row-key="index"
@@ -155,15 +165,18 @@
                 :pagination="{ pageSize: 5 }"
               >
                 <span slot="range" slot-scope="text, record">
-                  <trend :flag="record.status === 0 ? 'up' : 'down'">
+                  <Trend :flag="record.status === 0 ? 'up' : 'down'">
                     {{ text }}%
-                  </trend>
+                  </Trend>
                 </span>
               </a-table>
             </div>
+
           </a-card>
         </a-col>
+
         <a-col :xl="12" :lg="24" :md="24" :sm="24" :xs="24">
+
           <a-card class="antd-pro-pages-dashboard-analysis-salesCard" :loading="loading" :bordered="false" :title="$t('dashboard.analysis.the-proportion-of-sales')" :style="{ height: '100%' }">
             <div slot="extra" style="height: inherit;">
               <!-- style="bottom: 12px;display: inline-block;" -->
@@ -202,7 +215,6 @@
                   <v-coord type="theta" :radius="0.75" :innerRadius="0.6" />
                 </v-chart>
               </div>
-
             </div>
           </a-card>
         </a-col>
@@ -213,6 +225,7 @@
 
 <script>
 import moment from 'moment'
+import baseMixin from '@/utils/mixins/baseMixin'
 import {
   ChartCard,
   MiniArea,
@@ -224,7 +237,6 @@ import {
   NumberInfo,
   MiniSmoothArea
 } from '@/components'
-import baseMixin from '@/utils/mixins/baseMixin'
 
 const barData = []
 const barData2 = []

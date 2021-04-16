@@ -131,6 +131,7 @@ export default {
       loadData: parameter => getRoleList(
         Object.assign(parameter, this.queryParam)
       ).then(res => {
+        console.log(res)
         return res.result
       }),
 
@@ -148,7 +149,6 @@ export default {
         })
       })
 
-      console.log(this.mdl)
       this.visible = true
     },
     handleOk () {

@@ -431,43 +431,43 @@ export const asyncRouterMap = [
                   title: '内联编辑表格',
                   keepAlive: true
                 }
-              },
-              {
-                path: '/other/list/user-list',
-                name: 'UserList',
-                component: () => import(/* webpackChunkName: "userList" */ '@/views/other/UserList'),
-                meta: {
-                  title: '用户列表',
-                  keepAlive: true
-                }
-              },
-              {
-                path: '/other/list/role-list',
-                name: 'RoleList',
-                component: () => import(/* webpackChunkName: "roleList" */ '@/views/other/RoleList'),
-                meta: {
-                  title: '角色列表',
-                  keepAlive: true
-                }
-              },
-              {
-                path: '/other/list/system-role',
-                name: 'SystemRole',
-                component: () => import(/* webpackChunkName: "systemRole" */ '@/views/role/RoleList'),
-                meta: {
-                  title: '角色列表2',
-                  keepAlive: true
-                }
-              },
-              {
-                path: '/other/list/permission-list',
-                name: 'PermissionList',
-                component: () => import(/* webpackChunkName: "permissionList" */ '@/views/other/PermissionList'),
-                meta: {
-                  title: '权限列表',
-                  keepAlive: true
-                }
               }
+              // {
+              //   path: '/other/list/user-list',
+              //   name: 'UserList',
+              //   component: () => import(/* webpackChunkName: "userList" */ '@/views/other/UserList'),
+              //   meta: {
+              //     title: '用户列表',
+              //     keepAlive: true
+              //   }
+              // },
+              // {
+              //   path: '/other/list/role-list',
+              //   name: 'RoleList',
+              //   component: () => import(/* webpackChunkName: "roleList" */ '@/views/other/RoleList'),
+              //   meta: {
+              //     title: '角色列表',
+              //     keepAlive: true
+              //   }
+              // },
+              // {
+              //   path: '/other/list/system-role',
+              //   name: 'SystemRole',
+              //   component: () => import(/* webpackChunkName: "systemRole" */ '@/views/role/RoleList'),
+              //   meta: {
+              //     title: '角色列表2',
+              //     keepAlive: true
+              //   }
+              // },
+              // {
+              //   path: '/other/list/permission-list',
+              //   name: 'PermissionList',
+              //   component: () => import(/* webpackChunkName: "permissionList" */ '@/views/other/PermissionList'),
+              //   meta: {
+              //     title: '权限列表',
+              //     keepAlive: true
+              //   }
+              // }
             ]
           }
         ]
